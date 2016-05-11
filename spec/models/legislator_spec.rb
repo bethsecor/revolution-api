@@ -8,7 +8,7 @@ RSpec.describe Legislator, type: :model do
                                    political_party: "independent",
                                    term_starts_on: DateTime.new(2016, 02, 01),
                                    term_ends_on: DateTime.new(2018, 02, 01))
-                                   
+
     expect(legislator.valid?).to be true
   end
 end
