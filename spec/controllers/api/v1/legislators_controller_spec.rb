@@ -24,4 +24,31 @@ RSpec.describe Api::V1::LegislatorsController, type: :controller do
     expect(api_legislator['created_at']).to eq nil
     expect(api_legislator['updated_at']).to eq nil
   end
+
+  it "creates a legislator and receives a 201 response" do
+    legislator_data =
+      {
+        name: "John Smith",
+        state: "CA",
+        district: 1,
+        political_party: "independent",
+        term_starts_on: "2016-02-01",
+        term_ends_on: "2018-02-01"
+      }
+
+    post :create, format: :json, legislator: legislator_data
+
+    expect(response.status).to eq 201
+
+    api_item_1 = JSON.parse(response.body)
+
+    expect(api_item_1['name']).to eq "John Smith"
+    expect(api_item_1['state']).to eq "CA"
+    expect(api_item_1['district']).to eq 1
+    expect(api_item_1['political_party']).to eq "independent"
+    expect(api_item_1['term_starts_on']).to eq "2016-02-01"
+    expect(api_item_1['term_ends_on']).to eq "2018-02-01"
+    expect(api_item_1['created_at']).to eq nil
+    expect(api_item_1['updated_at']).to eq nil
+  end
 end
