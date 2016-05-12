@@ -15,6 +15,7 @@ RSpec.describe Api::V1::LegislatorsController, type: :controller do
 
     api_legislator = JSON.parse(response.body)
 
+    expect(api_legislator['id']).to eq legislator.id
     expect(api_legislator['name']).to eq legislator.name
     expect(api_legislator['state']).to eq legislator.state
     expect(api_legislator['district']).to eq legislator.district
@@ -42,6 +43,7 @@ RSpec.describe Api::V1::LegislatorsController, type: :controller do
 
     api_item_1 = JSON.parse(response.body)
 
+    expect(api_item_1['id']).to eq Legislator.last.id
     expect(api_item_1['name']).to eq "John Smith"
     expect(api_item_1['state']).to eq "CA"
     expect(api_item_1['district']).to eq 1

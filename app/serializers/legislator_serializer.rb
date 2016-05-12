@@ -1,5 +1,6 @@
 class LegislatorSerializer < ActiveModel::Serializer
-  attributes :name,
+  attributes :id,
+             :name,
              :state,
              :district,
              :political_party,
