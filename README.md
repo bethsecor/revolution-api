@@ -6,7 +6,7 @@ Find and create your legislators!
 
 **Framework:** Rails 4.2.5
 
-**Production Site:** [https://revolution-api-secor.herokuapp.com/legislators/1](https://revolution-api-secor.herokuapp.com/legislators/1)
+**Production Site:** [https://revolution-api-secor.herokuapp.com/api/v1/legislators/1](https://revolution-api-secor.herokuapp.com/api/v1/legislators/1)
 
 #### Using This API
 
@@ -51,6 +51,7 @@ This will return JSON like so:
 
 ```
 {
+  "id": 1,
   "name": "John Smith",
   "state": "CA",
   "district": 1,
