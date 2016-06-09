@@ -1,3 +1,3 @@
 class Legislator < ActiveRecord::Base
-  validates :name, presence: true
+  validates :name, :state, :district, presence: true
 end
