@@ -3,6 +3,8 @@ class Legislator < ActiveRecord::Base
             :state,
             :district,
             :political_party,
-            :term_starts_on, 
+            :term_starts_on,
             presence: true
+            
+  validates :district, numericality: { only_integer: true }
 end

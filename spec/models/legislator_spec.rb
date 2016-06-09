@@ -61,4 +61,15 @@ RSpec.describe Legislator, type: :model do
 
     expect(legislator.valid?).to be false
   end
+
+  it "should have an integer for district" do
+    legislator = Legislator.new(name: "John Smith",
+                                   state: "CA",
+                                   district: "Two",
+                                   political_party: "independent",
+                                   term_starts_on: DateTime.new(2016, 02, 01),
+                                   term_ends_on: DateTime.new(2018, 02, 01))
+
+    expect(legislator.valid?).to be false
+  end
 end
