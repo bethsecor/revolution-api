@@ -51,4 +51,14 @@ RSpec.describe Legislator, type: :model do
 
     expect(legislator.valid?).to be false
   end
+
+  it "should have a start term date" do
+    legislator = Legislator.new(name: "John Smith",
+                                state: "CA",
+                                district: 1,
+                                political_party: "independent",
+                                term_ends_on: DateTime.new(2018, 02, 01))
+
+    expect(legislator.valid?).to be false
+  end
 end
